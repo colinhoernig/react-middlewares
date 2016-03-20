@@ -11,13 +11,15 @@ class UserList extends Component {
     return (
       <div className="card card-block" key={user.id}>
         <h4 className="card-title">{user.name}</h4>
-        <p>{user.phone}</p>
-        <p><a href={"mailto:" + user.email}>{user.email}</a></p>
+        <p className="card-text">{user.company.name}</p>
+        <p className="card-text">
+          {user.phone}<br />
+          <a href={"mailto:" + user.email}>{user.email}</a><br />
+        </p>
         <address>
           {user.address.street}<br />
           {user.address.city}, {user.address.zipcode}
         </address>
-        <p className="card-text">{user.company.name}</p>
         <a href={"//"+ user.website} className="btn btn-primary" target="_blank">Website</a>
       </div>
     );
